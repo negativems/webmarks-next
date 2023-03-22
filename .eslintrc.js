@@ -22,6 +22,8 @@ module.exports = {
       '@typescript-eslint/no-unused-vars': ['warn'],
       '@typescript-eslint/semi': ['error', 'always'],
       '@typescript-eslint/indent': ['error', 3],
-      '@typescript-eslint/space-before-function-paren': ['error', 'never']
+      '@typescript-eslint/space-before-function-paren': ['error', 'never'],
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/strict-boolean-expressions': 'off'
    }
 };
