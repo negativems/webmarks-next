@@ -3,12 +3,13 @@ import { BuyMeACoffeIcon, FooterCurve, Logo } from './Icons';
 
 export default function Footer(): JSX.Element {
    return (
-      <footer className="bg-accent-light relative overflow-hidden">
-         <div className="container text-center mx-auto grid grid-cols-12 p-10 mb-10 relative z-10">
+      <footer className="bg-accent-light relative">
+         <div className="container text-center mx-auto grid grid-cols-12 p-10 mb-10 z-10">
             <div className="about col-span-3">
                <h3 className="text-center">About</h3>
                <div className="text">
-                  <p>This website is part of my final project of my degree, was made using NextJS.</p>
+                  <p>Hello 👋, I am Mohamed a 22yo programmer from <span className="underline location relative">Málaga</span>, Spain📍 who loves the website frontend and backend.</p>
+                  <p>This website is part of my final project of my degree, was made using the ReactJS framework <Link href="https://nextjs.org" className="font-bold underline">NextJS</Link>.</p>
                </div>
             </div>
             <div className="logo flex flex-col gap-5 items-center col-span-6">
@@ -24,7 +25,9 @@ export default function Footer(): JSX.Element {
                </Link>
             </div>
          </div>
-         <FooterCurve />
+         <div className="bg-accent-darker h-[100px] w-full absolute bottom-0">
+            <FooterCurve />
+         </div>
       </footer>
    );
 }

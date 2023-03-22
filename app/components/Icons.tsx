@@ -17,7 +17,7 @@ export const LogginIcon = ({ className = '' }: IconProps): JSX.Element => (
    </svg>
 );
 
-export const BuyMeACoffeIcon = ({ className }: IconProps): JSX.Element => (
+export const BuyMeACoffeIcon = (): JSX.Element => (
    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="45" fill="none">
       <path fill="#000" d="m27.47 10.26-.03-.018-.072-.02a.169.169 0 0 0 .101.038Zm.007-.022a.053.053 0 0 1-.01-.002v.007a.02.02 0 0 0 .01-.005Zm.408 3.155.052-.03.018-.01.018-.018a.295.295 0 0 0-.088.058Zm-.33-3.071-.05-.048-.035-.018a.14.14 0 0 0 .085.066Zm-12.628 30.56a.262.262 0 0 0-.103.078l.032-.02c.022-.02.052-.043.071-.058Zm7.34-1.434c0-.044-.023-.036-.018.125 0-.013.006-.026.008-.039l.01-.086Zm-.762 1.434a.262.262 0 0 0-.104.078l.032-.02c.022-.02.052-.043.072-.058Zm-11.74.347a.217.217 0 0 0-.108-.051l.087.043.02.008ZM8.607 40.12a.338.338 0 0 0-.042-.133c.017.043.03.087.04.131l.002.002Z" />
       <path fill="#FD0" d="M16.41 20.357c-1.597.678-3.407 1.446-5.752 1.446a10.97 10.97 0 0 1-2.904-.397l1.622 16.538c.057.691.375 1.336.889 1.806s1.188.731 1.887.73c0 0 2.3.119 3.067.119.826 0 3.304-.12 3.304-.12.699 0 1.372-.26 1.886-.73.514-.47.83-1.114.888-1.805l1.737-18.274c-.777-.262-1.56-.437-2.444-.437-1.528-.001-2.759.52-4.18 1.125v-.001Z" />
@@ -27,8 +27,25 @@ export const BuyMeACoffeIcon = ({ className }: IconProps): JSX.Element => (
 );
 
 export const FooterCurve = (): JSX.Element => (
-   <svg className="absolute bottom-0 left-1/2 -translate-x-1/2 mx-auto" xmlns="http://www.w3.org/2000/svg" width="1920" height="100" fill="none">
-      <path fill="#77FF47" d="M968.5 59.088C588.405 59.51 0 0 0 0v100h1920V.5s-578.2 58.173-951.5 58.588Z" />
-      <path fill="#255116" d="M1920 100V.5s-582.1 76.65-960 76.65S0 0 0 0v100h1920Z" />
+   <svg className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1920px] overflow-hidden" xmlns="http://www.w3.org/2000/svg" width="1920" height="100" fill="none">
+      <path fill="#9DFF7A" d="M0 0h1920v100H0z"/>
+      <path fill="#77FF47" d="M968.5 59.088C588.405 59.51 0 0 0 0v100h1920V.5s-578.2 58.173-951.5 58.588Z"/>
+      <path fill="#255116" d="M1920 100V.5s-582.1 76.65-960 76.65S0 0 0 0v100h1920Z"/>
    </svg>
 );
+
+export const CrossIcon = ({ color = 'red' }): JSX.Element => {
+   return (
+      <svg className="w-5 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+         <path fill={color} d="m18.8 16 5.5-5.5c.8-.8.8-2 0-2.8-.3-.4-.8-.7-1.3-.7s-1 .2-1.4.6L16 13.2l-5.5-5.5c-.8-.8-2.1-.8-2.8 0-.4.3-.7.8-.7 1.4s.2 1 .6 1.4l5.5 5.5-5.5 5.5c-.3.4-.6.9-.6 1.5 0 .5.2 1 .6 1.4.4.4.9.6 1.4.6.5 0 1-.2 1.4-.6l5.5-5.5 5.5 5.5c.8.8 2.1.8 2.8 0 .8-.8.8-2.1 0-2.8L18.8 16z" />
+      </svg>
+   );
+};
+
+export const CheckIcon = ({ color = 'green' }): JSX.Element => {
+   return (
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 17.837 17.837">
+         <path fill={ color } d="M16.145 2.571a.7.7 0 0 0-.99 0L6.92 10.804l-4.241-4.27a.698.698 0 0 0-.989 0L.204 8.019a.703.703 0 0 0 0 .99l6.217 6.258a.704.704 0 0 0 .99 0L17.63 5.047a.7.7 0 0 0 0-.994l-1.485-1.482z" />
+      </svg>
+   );
+};

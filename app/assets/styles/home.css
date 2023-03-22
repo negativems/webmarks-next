@@ -1,14 +1,9 @@
-header {
-   position: fixed;
-   width: 100%;
-   background-color: transparent;
-}
-
 .hero {
    background-color: white;
    height: 700px;
-   padding-top: 100px;
-   background-image: url("/head-curve.svg");
+   padding-top: 120px;
+   margin-top: calc(var(--header-height) * -1);
+   background-image: url("../../../public/head-curve.svg");
    background-repeat: no-repeat;
    background-position: bottom right;
    background-size: 60%;
