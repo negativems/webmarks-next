@@ -26,7 +26,7 @@ export const BuyMeACoffeIcon = (): JSX.Element => (
    </svg>
 );
 
-export const FooterCurve = (): JSX.Element => (
+export const FooterCurveIcon = (): JSX.Element => (
    <svg className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1920px] overflow-hidden" xmlns="http://www.w3.org/2000/svg" width="1920" height="100" fill="none">
       <path fill="#9DFF7A" d="M0 0h1920v100H0z"/>
       <path fill="#77FF47" d="M968.5 59.088C588.405 59.51 0 0 0 0v100h1920V.5s-578.2 58.173-951.5 58.588Z"/>

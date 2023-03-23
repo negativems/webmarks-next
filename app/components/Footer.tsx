@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BuyMeACoffeIcon, FooterCurve, Logo } from './Icons';
+import { BuyMeACoffeIcon, FooterCurveIcon, Logo } from './Icons';
 
 export default function Footer(): JSX.Element {
    return (
@@ -26,7 +26,7 @@ export default function Footer(): JSX.Element {
             </div>
          </div>
          <div className="bg-accent-darker h-[100px] w-full absolute bottom-0">
-            <FooterCurve />
+            <FooterCurveIcon />
          </div>
       </footer>
    );
