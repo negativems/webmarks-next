@@ -1,5 +1,4 @@
 import * as cheerio from 'cheerio';
-import { NextResponse } from 'next/server';
 import { Configuration, OpenAIApi } from 'openai';
 
 export async function GET(request: Request) {
@@ -16,7 +15,7 @@ export async function GET(request: Request) {
 
    $('script').remove();
    $('style').remove();
-   const HTMLResult = $.html();
+   const HTMLResult = $.html() as string;
 
    const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY

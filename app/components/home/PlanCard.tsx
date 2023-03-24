@@ -7,11 +7,13 @@ interface PlanCardProps {
    tryable?: boolean
    saveAmount?: number
    dark?: boolean
+   className?: string
 }
 
-const PlanCard = ({ name, features, price, tryable, saveAmount, dark = false }: PlanCardProps) => {
+const PlanCard = ({ name, features, price, tryable, saveAmount, dark = false, className = '' }: PlanCardProps) => {
+   className = className === '' ? '' : ' ' + className;
    return (
-      <div className={'plan-card p-10 shadow-md shadow-black rounded-3xl relative ' + (dark ? 'bg-accent-darker text-white' : 'bg-white')}>
+      <div className={'plan-card p-10 shadow-md shadow-black rounded-3xl relative ' + (dark ? 'bg-accent-darker text-white' : 'bg-white') + className}>
          <header className="plan-card-header flex justify-between relative mb-10">
             <h3 className="text-center w-full">{name}</h3>
             {
@@ -32,12 +34,11 @@ const PlanCard = ({ name, features, price, tryable, saveAmount, dark = false }: 
             </ul>
          </div>
          <footer className="plan-card-footer">
-            <div className="plan-card-price bg-red-300">
+            <div className="plan-card-price text-center font-extrabold text-2xl my-10">
                <span className="plan-card-price-currency">$</span>
-               {price}
+               {price}/month
             </div>
-            <button className="btn btn--primary">Get Started</button>
-            {tryable === true && <button className="btn btn--secondary">Try for free</button>}
+            {tryable === true ? <button className="bg-">Try for free</button> : <button className="text-2xl">Get Started</button>}
          </footer>
       </div>
    );

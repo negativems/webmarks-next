@@ -33,10 +33,10 @@ export default function PlansSection() {
    return (
       <section>
          <h2 className="text-3xl font-bold mb-10">Plans</h2>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <PlanCard name='Free' features={freeFeatures} price={0} />
-            <PlanCard name='Premium' features={premiumFeatures} price={19} saveAmount={20} tryable dark />
-            <PlanCard name='Enterprise' features={freeFeatures} price={19} saveAmount={20} tryable />
+         <div className="flex gap-10">
+            <PlanCard className="flex-1" name='Free' features={freeFeatures} price={0} />
+            <PlanCard className="flex-1" name='Premium' features={premiumFeatures} price={19} saveAmount={20} tryable dark />
+            <PlanCard className="flex-1" name='Enterprise' features={freeFeatures} price={19} saveAmount={20} tryable />
          </div>
       </section>
    );
