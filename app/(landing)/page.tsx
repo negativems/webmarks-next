@@ -1,4 +1,5 @@
 'use client';
+// import { auth } from '@clerk/nextjs/app-beta';
 import { useEffect } from 'react';
 import '../assets/styles/home.css';
 import Hero from '../components/home/Hero';
@@ -27,7 +28,7 @@ export default function Home(): JSX.Element {
 
       window.addEventListener('scroll', handleScroll);
       return () => { window.removeEventListener('scroll', handleScroll); }; // this will clean up the event every time the component is re-rendered
-   });
+   }, []);
 
    return (<>
       <Hero />

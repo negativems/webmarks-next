@@ -1,7 +1,6 @@
 import '../assets/styles/globals.css';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Providers from '../providers';
 
 export const metadata = {
    title: 'Webmarks - The simplest way to manage your bookmarks',
@@ -9,18 +8,16 @@ export const metadata = {
 };
 
 interface Props {
-   children: JSX.Element
+   children: React.ReactNode
 }
 
 export default function RootLayout({ children }: Props) {
    return (
       <html lang="en">
          <body className="overflow-x-hidden bg-gray-100">
-            <Providers>
-               <Header />
-               {children}
-               <Footer />
-            </Providers>
+            <Header />
+            {children}
+            <Footer />
          </body>
       </html>
    );

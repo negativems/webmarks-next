@@ -1,9 +1,10 @@
 'use client';
+import { type User, type Session, DefaultUser } from 'next-auth';
+import { getSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import HeaderLogo from './HeaderLogo';
 import { LogginIcon } from './Icons';
-import { useSession } from 'next-auth/react';
 
 const notLogged = (
    <div className="login flex items-center flex-1 justify-end">
@@ -14,15 +15,27 @@ const notLogged = (
    </div>
 );
 
-const logged = (username: string) => (
+const logged = (user: any) => (
    <div className="login flex items-center flex-1 justify-end">
       <Link href="/profile" className="login font-bold py-3 px-5 rounded-xl bg-accent-light hover:bg-accent-dark">
-         <span>Logged as {username}</span>
+         <span>Logged as {user.name}</span>
       </Link>
    </div>
 );
 
-export default function Header(): JSX.Element {
+export const getServerSideProps = async (context: any) => {
+   const session = await getSession(context);
+
+   return {
+      props: {
+         session
+      }
+   };
+};
+
+export default function Header({ session }: any): JSX.Element {
+   const { user } = session;
+
    const pathname = usePathname();
    const currentPath = pathname === '/' ? 0 : pathname === '/features' ? 1 : 2;
    const headerLinks = [
@@ -31,8 +44,6 @@ export default function Header(): JSX.Element {
       { href: '/about', label: 'ABOUT' }
    ] as any;
    headerLinks[currentPath].active = true;
-
-   const { data: session } = useSession();
 
    return (
       <header className="flex items-center bg-transparent relative z-20">
@@ -44,8 +55,9 @@ export default function Header(): JSX.Element {
                {headerLinks.map((link: any) => (
                   <Link key={link.href} href={link.href} className={(link.active === true ? 'active ' : ' ') + 'w-full text-center'}>{link.label}</Link>
                ))}
+
+               {user ? logged(user) : notLogged}
             </div>
-            {session ? logged(session.user.name) : notLogged}
          </div>
       </header>
    );
