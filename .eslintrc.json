@@ -1,0 +1,68 @@
+{
+   "env": {
+      "es2021": true,
+      "node": true
+   },
+   "extends": "standard-with-typescript",
+   "overrides": [],
+   "plugins": [
+      "@typescript-eslint"
+   ],
+   "parser": "@typescript-eslint/parser",
+   "parserOptions": {
+      "project": "./tsconfig.json",
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+   },
+   "rules": {
+      "@typescript-eslint/space-before-function-paren": [
+         "error",
+         {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+         }
+      ],
+      "@typescript-eslint/restrict-template-expressions": [
+         "error",
+         {
+            "allowAny": true
+         }
+      ],
+      "@typescript-eslint/strict-boolean-expressions": [
+         "error",
+         {
+            "allowAny": true
+         }
+      ],
+      "@typescript-eslint/indent": [
+         "error",
+         3
+      ],
+      "@typescript-eslint/semi": [
+         "off"
+      ],
+      "@typescript-eslint/dot-notation": [
+         "error"
+      ],
+      "no-irregular-whitespace": [
+         "off"
+      ],
+      "semi": [
+         2,
+         "always"
+      ],
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+         "warn", // or "error"
+         {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+         }
+      ],
+      "@typescript-eslint/explicit-function-return-type": [
+         "off"
+      ]
+   }
+}
