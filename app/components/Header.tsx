@@ -1,8 +1,8 @@
 'use client';
-import { type User, type Session, DefaultUser } from 'next-auth';
-import { getSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import HeaderLogo from './HeaderLogo';
 import { LogginIcon } from './Icons';
 
@@ -23,18 +23,9 @@ const logged = (user: any) => (
    </div>
 );
 
-export const getServerSideProps = async (context: any) => {
-   const session = await getSession(context);
-
-   return {
-      props: {
-         session
-      }
-   };
-};
-
-export default function Header({ session }: any): JSX.Element {
-   const { user } = session;
+export default function Header(): JSX.Element {
+   const { data: session } = useSession();
+   const [user, setUser] = useState(undefined);
 
    const pathname = usePathname();
    const currentPath = pathname === '/' ? 0 : pathname === '/features' ? 1 : 2;
