@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@supabase/auth-helpers-nextjs': ^0.5.6
   '@supabase/supabase-js': ^2.12.1
   '@types/node': 18.15.5
   '@types/react': 18.0.28
@@ -9,6 +10,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.56.0
   autoprefixer: ^10.4.14
   cheerio: 1.0.0-rc.12
+  encoding: ^0.1.13
   eslint: ^8.0.1
   eslint-config-next: 13.2.4
   eslint-config-standard-with-typescript: ^34.0.1
@@ -22,19 +24,23 @@ specifiers:
   postcss: ^8.4.21
   react: 18.2.0
   react-dom: 18.2.0
+  server-only: ^0.0.1
   tailwindcss: ^3.2.7
   typescript: '*'
 
 dependencies:
-  '@supabase/supabase-js': 2.12.1
+  '@supabase/auth-helpers-nextjs': 0.5.6_pz5pnydt2nehkak4aetyy3l46i
+  '@supabase/supabase-js': 2.12.1_encoding@0.1.13
   '@types/node': 18.15.5
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  encoding: 0.1.13
   eslint-config-next: 13.2.4_j4766f7ecgqbon3u7zlxn5zszu
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.20.1_ld2jel3hspngo3u5lti2kgl2sq
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  server-only: 0.0.1
 
 devDependencies:
   '@typescript-eslint/eslint-plugin': 5.56.0_2hcjazgfnbtq42tcc73br2vup4
@@ -276,26 +282,43 @@ packages:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
     dev: false
 
-  /@supabase/functions-js/2.1.0:
+  /@supabase/auth-helpers-nextjs/0.5.6_pz5pnydt2nehkak4aetyy3l46i:
+    resolution: {integrity: sha512-NiUGGnO9vRycMDnl/DzFbHCJhNV9DdH1vH61T1Fzgp2aRW8LfLRVlBQeGCg2AzyvAe0MiLbbRsGNcJmAmJPs9A==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.0.4
+    dependencies:
+      '@supabase/auth-helpers-shared': 0.3.0_pz5pnydt2nehkak4aetyy3l46i
+      '@supabase/supabase-js': 2.12.1_encoding@0.1.13
+    dev: false
+
+  /@supabase/auth-helpers-shared/0.3.0_pz5pnydt2nehkak4aetyy3l46i:
+    resolution: {integrity: sha512-6lKhVMBZnGdFelpZyvQDBQSOY+pglS6a5U4ieAqfKQ/rx3rSjRASR3UGh7V+el1re3xYe3ddVBWXw16rdVAzrQ==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.0.4
+    dependencies:
+      '@supabase/supabase-js': 2.12.1_encoding@0.1.13
+    dev: false
+
+  /@supabase/functions-js/2.1.0_encoding@0.1.13:
     resolution: {integrity: sha512-vRziB+AqRXRaGHjEFHwBo0kuNDTuAxI7VUeqU24Fe86ISoD8YEQm0dGdpleJEcqgDGWaO6pxT1tfj1BRY5PwMg==}
     dependencies:
-      cross-fetch: 3.1.5
+      cross-fetch: 3.1.5_encoding@0.1.13
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@supabase/gotrue-js/2.16.0:
+  /@supabase/gotrue-js/2.16.0_encoding@0.1.13:
     resolution: {integrity: sha512-k7curH5xxnQmUiG8AeFW7KEJST99vhFnBCidWFhuSSyLP1Ja8Ix3g4bmLUv209mhX8LmAaDMGKNQs8gG0MOKCw==}
     dependencies:
-      cross-fetch: 3.1.5
+      cross-fetch: 3.1.5_encoding@0.1.13
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@supabase/postgrest-js/1.4.1:
+  /@supabase/postgrest-js/1.4.1_encoding@0.1.13:
     resolution: {integrity: sha512-aruqwV/aTggkM7OVv2JinCeXmRMKHJCZpkuS1nuoa0NgLw7g3NyILSyWOKYTBJ/PxE/zXtWsBhdxFzaaNz5uxg==}
     dependencies:
-      cross-fetch: 3.1.5
+      cross-fetch: 3.1.5_encoding@0.1.13
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -310,23 +333,23 @@ packages:
       - supports-color
     dev: false
 
-  /@supabase/storage-js/2.3.1:
+  /@supabase/storage-js/2.3.1_encoding@0.1.13:
     resolution: {integrity: sha512-BaPIvyvjuZW1V0CnfGKUZyzpBUXnsh0XD8eqTOYd+MdiGPmIPI0vtwnT4fAoK8mipp1vpcN62EVQaqeUnWXPtQ==}
     dependencies:
-      cross-fetch: 3.1.5
+      cross-fetch: 3.1.5_encoding@0.1.13
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@supabase/supabase-js/2.12.1:
+  /@supabase/supabase-js/2.12.1_encoding@0.1.13:
     resolution: {integrity: sha512-sni5tYUCjLd57xuFbL8iGP/hAq2rS/Bxh3StrGjO0v78bMcS+WPh6E/WV5SstvOrxS78RKI8fASm3jk8/UjVXA==}
     dependencies:
-      '@supabase/functions-js': 2.1.0
-      '@supabase/gotrue-js': 2.16.0
-      '@supabase/postgrest-js': 1.4.1
+      '@supabase/functions-js': 2.1.0_encoding@0.1.13
+      '@supabase/gotrue-js': 2.16.0_encoding@0.1.13
+      '@supabase/postgrest-js': 1.4.1_encoding@0.1.13
       '@supabase/realtime-js': 2.7.1
-      '@supabase/storage-js': 2.3.1
-      cross-fetch: 3.1.5
+      '@supabase/storage-js': 2.3.1_encoding@0.1.13
+      cross-fetch: 3.1.5_encoding@0.1.13
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -815,10 +838,10 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /cross-fetch/3.1.5:
+  /cross-fetch/3.1.5_encoding@0.1.13:
     resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
     dependencies:
-      node-fetch: 2.6.7
+      node-fetch: 2.6.7_encoding@0.1.13
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -1014,6 +1037,12 @@ packages:
 
   /emoji-regex/9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
+    dev: false
+
+  /encoding/0.1.13:
+    resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
+    dependencies:
+      iconv-lite: 0.6.3
     dev: false
 
   /enhanced-resolve/5.12.0:
@@ -1832,6 +1861,13 @@ packages:
       entities: 4.4.0
     dev: true
 
+  /iconv-lite/0.6.3:
+    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      safer-buffer: 2.1.2
+    dev: false
+
   /ignore/5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
@@ -2230,7 +2266,7 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /node-fetch/2.6.7:
+  /node-fetch/2.6.7_encoding@0.1.13:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
     engines: {node: 4.x || >=6.0.0}
     peerDependencies:
@@ -2239,6 +2275,7 @@ packages:
       encoding:
         optional: true
     dependencies:
+      encoding: 0.1.13
       whatwg-url: 5.0.0
     dev: false
 
@@ -2660,6 +2697,10 @@ packages:
       get-intrinsic: 1.2.0
       is-regex: 1.1.4
 
+  /safer-buffer/2.1.2:
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+    dev: false
+
   /scheduler/0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
@@ -2676,6 +2717,10 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+
+  /server-only/0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+    dev: false
 
   /shebang-command/2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}

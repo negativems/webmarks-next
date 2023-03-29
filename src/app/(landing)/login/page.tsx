@@ -1,5 +1,5 @@
 'use client';
-import { GithubIcon, GoogleIcon } from '@/app/components/Icons';
+import { GithubIcon, GoogleIcon } from '@components/Icons';
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 

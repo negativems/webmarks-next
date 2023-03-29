@@ -1,31 +1,38 @@
 'use client';
-import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 import HeaderLogo from './HeaderLogo';
-import { LogginIcon } from './Icons';
+import { GithubIcon, LogginIcon } from './Icons';
+import { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
 
 const notLogged = (
    <div className="login flex items-center flex-1 justify-end">
-      <Link href="/login" className="login font-bold py-3 px-5 rounded-xl bg-accent-light hover:bg-accent-dark">
-         <LogginIcon className="mr-3 inline"/>
+      <Link href="/login" className="flex gap-3 font-bold py-3 px-5 rounded-xl bg-accent-light hover:bg-accent-dark">
+         <LogginIcon className="inline"/>
          <span>LOGIN</span>
       </Link>
    </div>
 );
 
 const logged = (user: any) => (
-   <div className="login flex items-center flex-1 justify-end">
-      <Link href="/profile" className="login font-bold py-3 px-5 rounded-xl bg-accent-light hover:bg-accent-dark">
-         <span>Logged as {user.name}</span>
+   <div className="login flex items-center flex-1 justify-end text-xs">
+      <Link href="/profile" className="login font-bold py-3 px-5 rounded-xl hover:bg-accent-light">
+         <GithubIcon className="inline mr-3 bg-accent-light rounded-full p-2 box-content" color="black"/>
+         <span className="h-full align-middle">Logged as {user.name}</span>
       </Link>
    </div>
 );
 
 export default function Header(): JSX.Element {
    const { data: session } = useSession();
-   const [user, setUser] = useState(undefined);
+   const [user, setUser] = useState<any>(null);
+
+   useEffect(() => {
+      if (session) {
+         setUser(session.user);
+      }
+   }, [session]);
 
    const pathname = usePathname();
    const currentPath = pathname === '/' ? 0 : pathname === '/features' ? 1 : 2;
@@ -44,11 +51,10 @@ export default function Header(): JSX.Element {
             </div>
             <div className="navbar flex gap-12 flex-1">
                {headerLinks.map((link: any) => (
-                  <Link key={link.href} href={link.href} className={(link.active === true ? 'active ' : ' ') + 'w-full text-center'}>{link.label}</Link>
+                  <Link key={link.href} href={link.href} className={(link.active === true ? 'active ' : '') + 'w-full text-center'}>{link.label}</Link>
                ))}
-
-               {user ? logged(user) : notLogged}
             </div>
+            {user ? logged(user) : notLogged}
          </div>
       </header>
    );
