@@ -1,4 +1,6 @@
 'use client';
+import '@assets/styles/dashboard.css';
+import Modal from '@components/Modal';
 import TopNotification from '@components/TopNotification';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
@@ -11,7 +13,7 @@ const DashboardPage = () => {
    }, [status]);
 
    return (
-      <div>
+      <div className="relative">
          {
             showNotification &&
             <TopNotification type='warning'>
@@ -19,6 +21,7 @@ const DashboardPage = () => {
             </TopNotification>
          }
          <h1>Dashboard</h1>
+         <Modal />
       </div>
    );
 };
