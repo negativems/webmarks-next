@@ -1,10 +1,9 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import HeaderLogo from './HeaderLogo';
 import { GithubIcon, LogginIcon } from './Icons';
-import { useEffect, useState } from 'react';
-import { useSession } from 'next-auth/react';
 
 const notLogged = (
    <div className="login flex items-center flex-1 justify-end">
@@ -25,14 +24,7 @@ const logged = (user: any) => (
 );
 
 export default function Header(): JSX.Element {
-   const { data: session } = useSession();
    const [user, setUser] = useState<any>(null);
-
-   useEffect(() => {
-      if (session) {
-         setUser(session.user);
-      }
-   }, [session]);
 
    const pathname = usePathname();
    const currentPath = pathname === '/' ? 0 : pathname === '/features' ? 1 : 2;

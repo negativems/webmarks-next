@@ -14,13 +14,11 @@ export async function GET(request: Request) {
    const html = await response.text();
    const $ = cheerio.load(html);
 
-   $('script').remove();
-   $('style').remove();
    const HTMLResult = {
       title: $('title').text(),
-      h1: $.html('h1'),
-      h2: $.html('h2'),
-      p: $.html('p')
+      h1: $.html('h1')
+      // h2: $.html('h2'),
+      // p: $.html('p')
    };
 
    const configuration = new Configuration({
@@ -32,7 +30,6 @@ export async function GET(request: Request) {
 I will give you an html tags from a website and you will give me the keywords of this website.
 Example: News, Technology, Science, etc.
 Limit the response to 5 elements.
-Language: Spanish
 Make it all in same line separated with comma:
 ${JSON.stringify(HTMLResult)}
    `;
@@ -45,7 +42,7 @@ ${JSON.stringify(HTMLResult)}
    return NextResponse.json(completion.data.choices[0].message?.content.split(',').map((item) => item.trim()));
 
    // const HTMLRaw = `
-   // <html >
+   // <html>
    //    <head>
    //       <title>${HTMLResult.title}</title>
    //       <meta charset="utf-8">

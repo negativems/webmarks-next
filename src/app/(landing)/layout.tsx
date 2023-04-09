@@ -1,4 +1,4 @@
-import Providers from 'app/providers';
+import SupabaseProvider from 'app/providers/supabase-provider';
 import '../assets/styles/globals.css';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -16,11 +16,11 @@ export default async function RootLayout({ children }: Props) {
    return (
       <html lang="en">
          <body className="overflow-x-hidden bg-gray-100">
-            <Providers>
+            <SupabaseProvider>
                <Header />
                {children}
                <Footer />
-            </Providers>
+            </SupabaseProvider>
          </body>
       </html>
    );
