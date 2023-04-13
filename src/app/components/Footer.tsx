@@ -16,11 +16,11 @@ export default function Footer(): JSX.Element {
                <h2 className="text-2xl font-extrabold">WEBMARKS</h2>
                <Logo />
             </div>
-            <div className="coffe col-span-3 flex flex-col items-center gap-5">
-               <h3>Buy me a coffe</h3>
-               <p>Please consider buy me a coffe if you think it deserves it.</p>
+            <div className="coffee col-span-3 flex flex-col items-center gap-5">
+               <h3>Buy me a coffee</h3>
+               <p>Please consider buy me a coffee if you think it deserves it.</p>
 
-               <Link href="https://www.buymeacoffee.com/mohamedbh" className="font-bold" target="_blank" rel="noreferrer">
+               <Link href="https://www.buymeacoffeee.com/mohamedbh" className="font-bold" target="_blank" rel="noreferrer">
                   <BuyMeACoffeIcon />
                </Link>
             </div>

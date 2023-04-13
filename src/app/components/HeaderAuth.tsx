@@ -1,5 +1,4 @@
-import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs';
-import { cookies, headers } from 'next/headers';
+import createClient from 'lib/supabase-server';
 import Link from 'next/link';
 import { GithubIcon, LogginIcon } from './Icons';
 
@@ -22,11 +21,7 @@ const logged = (user: any) => (
 );
 
 export default async function HeaderAuth() {
-   const supabase = createServerComponentSupabaseClient({
-      headers,
-      cookies
-   });
-
+   const supabase = createClient();
    const { data: { user } } = await supabase.auth.getUser();
 
    return user ? logged(user) : notLogged;

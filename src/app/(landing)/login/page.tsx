@@ -4,7 +4,7 @@ import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default async function Page() {
+export default function Page() {
    const [supabase] = useState(() => createBrowserSupabaseClient());
 
    const handleSignUp = async () => {
