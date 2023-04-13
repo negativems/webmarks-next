@@ -16,8 +16,8 @@ export async function GET(request: Request) {
 
    const HTMLResult = {
       title: $('title').text(),
-      h1: $.html('h1')
-      // h2: $.html('h2'),
+      h1: $.html('h1'),
+      h2: $.html('h2'),
       // p: $.html('p')
    };
 
@@ -54,6 +54,7 @@ ${JSON.stringify(HTMLResult)}
    //    </body>
    // </html>
    // `;
+
    // return new Response(HTMLRaw, {
    //    headers: {
    //       'content-type': 'text/html'

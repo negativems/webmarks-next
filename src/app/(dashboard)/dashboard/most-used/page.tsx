@@ -1,5 +1,4 @@
 'use client';
-import '@assets/styles/dashboard.css';
 import SearchBar from '@components/dashboard/SearchBar';
 import { Text } from '@tremor/react';
 import Link from 'next/link';
@@ -16,16 +15,10 @@ const bookmarks = [
       url: 'https://facebook.com',
       tags: ['social', 'facebook'],
       color: 'blue'
-   },
-   {
-      name: 'Twitter',
-      url: 'https://twitter.com',
-      tags: ['social', 'twitter'],
-      color: 'red'
    }
 ];
 
-const DashboardPage = () => {
+export default function MostUsed() {
    return (
       <div className="relative">
          <SearchBar />
@@ -50,6 +43,4 @@ const DashboardPage = () => {
          </div>
       </div>
    );
-};
-
-export default DashboardPage;
+}

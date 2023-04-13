@@ -13,7 +13,7 @@ export const GithubIcon = ({ className = '', color = 'black' }) => (
    </svg>
 );
 
-export const Logo = ({ className = '', color = 'black' }): JSX.Element => (
+export const Logo = ({ className = '', color = 'white' }): JSX.Element => (
    <svg className={`${className} logo`} height="110" viewBox="0 0 59 110" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 5.9C0 2.64152 2.64152 0 5.9 0H53.1C56.3585 0 59 2.64152 59 5.9V20.06C59 20.06 41.3812 28 29.5 28C17.6188 28 0 20.06 0 20.06V5.9Z" fill="#3AE000" />
       <path d="M0 28.3199C0 28.3199 17.1799 39.5 29.5 39.5C41.8201 39.5 59 28.3199 59 28.3199V89.645C59 98.595 59 103.07 56.0876 104.78C53.1751 106.49 49.2671 104.31 41.4512 99.9499L40.9976 99.6969C35.3784 96.5621 32.5688 94.9947 29.5 94.9947C26.4312 94.9947 23.6216 96.5621 18.0024 99.6969L17.5488 99.9499C9.73287 104.31 5.82489 106.49 2.91244 104.78C0 103.07 0 98.595 0 89.645V28.3199Z" fill="#3AE000" />
@@ -59,5 +59,29 @@ export const CheckIcon = ({ color = 'green' }): JSX.Element => {
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 17.837 17.837">
          <path fill={ color } d="M16.145 2.571a.7.7 0 0 0-.99 0L6.92 10.804l-4.241-4.27a.698.698 0 0 0-.989 0L.204 8.019a.703.703 0 0 0 0 .99l6.217 6.258a.704.704 0 0 0 .99 0L17.63 5.047a.7.7 0 0 0 0-.994l-1.485-1.482z" />
       </svg>
+   );
+};
+
+export const ListBulletIcon = ({ className = '' }): JSX.Element => {
+   return (
+      <svg xmlns="http://www.w3.org/2000/svg" className={ 'w-6 h-6' + (className ? ' ' + className : '') } fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+      </svg>
+   );
+};
+
+export const Clock = ({ className = '' }): JSX.Element => {
+   return (
+      <svg xmlns="http://www.w3.org/2000/svg" className={'w-6 h-6' + (className ? ' ' + className : '')} fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
+         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+   );
+};
+
+export const NumberedSquare = ({ number = 0, className = '' }): JSX.Element => {
+   return (
+      <div className={ 'flex items-center justify-center w-6 h-6 rounded-full border-black border-[1px] p-2' + (className ? ' ' + className : '') }>
+         <span className="text-gray-500">{ number }</span>
+      </div>
    );
 };
